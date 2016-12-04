@@ -1,1 +1,5 @@
 ---
+samba_workgroup: WORKGROUP
+samba_hosts_allow: "127."
+samba_map_to_guest: "Bad User"
+samba_definitions: {}
