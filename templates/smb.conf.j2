@@ -255,8 +255,9 @@ dos charset = CP932
 # printcap name = used to specify an alternative printcap file.
 #
 
-	load printers = yes
+	load printers = no
 	cups options = raw
+	disable spoolss = yes
 
 ;	printcap name = /etc/printcap
 	# obtain a list of printers automatically on UNIX System V systems:
