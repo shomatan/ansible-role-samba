@@ -287,10 +287,9 @@ dos charset = CP932
 {% for key, value in samba_definitions.iteritems() %}
 [{{ key }}]
   path = {{ value.path }}
-  public = {{ value.public | default("yes") }}
   writable = {{ value.writable | default("yes") }}
-{% if value.guest_ok is defined %}
-  guest ok = {{ value.guest_ok }}
+{% if value.public is defined %}
+	public = {{ value.public }}
 {% endif %}
 {% if value.create_mode is defined %}
   create mode = {{ value.create_mode }}
