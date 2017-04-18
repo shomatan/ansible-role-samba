@@ -1,6 +1,8 @@
 ---
 - name: restart smb
   service: name=smb state=restarted
+  when: ansible_connection != 'docker'
 
 - name: restart nmb
-  service: name=nmb state=restarted  
+  service: name=nmb state=restarted
+  when: ansible_connection != 'docker'
