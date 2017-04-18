@@ -1,12 +1,16 @@
 ---
 - name: Ensure samba packages are installed.
-  yum: name={{ item }} state=installed
+  yum:
+    name: "{{ item }}"
+    state: installed
   with_items:
     - samba
     - samba-client
 
 - name: Place samba config.
-  template: src=smb.conf.j2 dest=/etc/samba/smb.conf
+  template:
+    src: smb.conf.j2
+    dest: /etc/samba/smb.conf
   notify:
     - restart smb
     - restart nmb
